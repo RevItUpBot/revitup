@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apollo 1 Release — What's New in Rev.io PSA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --prussian: #1D3756;
+      --prussian-dark: #152843;
+      --prussian-deeper: #0f1e33;
+      --green: #6EBE4F;
+      --turquoise: #2399B5;
+      --cultured: #F8F8F8;
+      --platinum: #E6E7E8;
+      --grad-dark: linear-gradient(135deg, #1B3B61 0%, #194477 100%);
+      --font-head: 'Barlow Condensed', 'Oswald', sans-serif;
+      --font-body: 'Nunito Sans', 'Source Sans Pro', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--cultured);
+      color: #222;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: var(--prussian-deeper);
+      border-bottom: 3px solid var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--green);
+    }
+
+    .btn-demo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--turquoise);
+      color: #fff;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 6px;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-demo:hover {
+      background: #1b7f99;
+      transform: translateY(-1px);
+    }
+
+    .btn-demo svg {
+      flex-shrink: 0;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--grad-dark);
+      position: relative;
+      overflow: hidden;
+      padding: 100px 40px 90px;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(110,190,79,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 30%, rgba(35,153,181,0.15) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    /* Subtle grid pattern */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 .accent {
+      color: var(--green);
+    }
+
+    .hero-sub {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.82);
+      max-width: 580px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+      line-height: 1.55;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat .number {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2.8rem;
+      line-height: 1;
+      color: var(--green);
+      display: block;
+    }
+
+    .hero-stat .label {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+
+    /* ── Section Shared ── */
+    section { padding: 80px 40px; }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--prussian);
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 600px;
+      margin-bottom: 52px;
+    }
+
+    /* ── Feature Cards Grid ── */
+    .features-section {
+      background: var(--cultured);
+    }
+
+    .features-section .section-header {
+      text-align: center;
+    }
+
+    .features-section .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      border: 1px solid var(--platinum);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--turquoise));
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(29,55,86,0.13);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+      line-height: 1;
+    }
+
+    .card-category {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--prussian);
+      margin-bottom: 16px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card ul li {
+      font-size: 0.9rem;
+      color: #444;
+      padding: 5px 0 5px 18px;
+      position: relative;
+      line-height: 1.45;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .card ul li:last-child {
+      border-bottom: none;
+    }
+
+    .card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+
+    /* ── Velocity Callout ── */
+    .velocity-section {
+      background: var(--prussian);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .velocity-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 10% 50%, rgba(110,190,79,0.1) 0%, transparent 55%),
+        radial-gradient(ellipse at 90% 50%, rgba(35,153,181,0.1) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .velocity-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .velocity-section .section-label {
+      color: var(--turquoise);
+    }
+
+    .velocity-section .section-title {
+      color: #fff;
+    }
+
+    .velocity-text {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .velocity-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-content: center;
+      margin: 32px 0;
+    }
+
+    .velocity-divider span {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--green), var(--turquoise));
+      border-radius: 2px;
+    }
+
+    .velocity-icon {
+      font-size: 2rem;
+    }
+
+    /* ── Integrations Pills ── */
+    .integrations-section {
+      background: #fff;
+      text-align: center;
+    }
+
+    .integrations-section .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cultured);
+      border: 1.5px solid var(--platinum);
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--prussian);
+      transition: all 0.2s;
+    }
+
+    .pill:hover {
+      background: var(--prussian);
+      color: #fff;
+      border-color: var(--prussian);
+      transform: translateY(-1px);
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+
+    /* ── Bottom CTA Banner ── */
+    .cta-banner {
+      background: var(--prussian-deeper);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 100px 40px;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(110,190,79,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Diagonal accent line */
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--green) 0%, var(--turquoise) 50%, var(--green) 100%);
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-banner .section-label {
+      color: var(--turquoise);
+    }
+
+    .cta-headline {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .cta-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 40px;
+      line-height: 1.55;
+    }
+
+    .btn-demo-lg {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--turquoise);
+      color: #fff;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 8px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(35,153,181,0.35);
+    }
+
+    .btn-demo-lg:hover {
+      background: #1b7f99;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(35,153,181,0.5);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #0b1826;
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.2rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+    }
+
+    .footer-logo span { color: var(--green); }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .footer-tagline {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      section { padding: 60px 20px; }
+      .hero { padding: 70px 20px 60px; }
+      .hero-stats { gap: 28px; }
+      .cards-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+      .cta-banner { padding: 70px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <a href="https://rev.io" class="nav-logo">Rev<span>.</span>io</a>
+    <a href="https://rev.io" class="btn-demo">
+      REQUEST DEMO
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Apollo 1 Release · Live Now · February 2026</p>
+      <h1>We Built<br /><span class="accent">What You Asked For</span></h1>
+      <p class="hero-sub">60+ new features now live in Rev.io PSA. Your dealbreaker? It's done. We listened, we shipped, and we're not stopping.</p>
+      <a href="https://rev.io" class="btn-demo">
+        REQUEST DEMO
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 8H14M14 8L8.5 2.5M14 8L8.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="number">60+</span>
+          <span class="label">New Features</span>
+        </div>
+        <div class="hero-stat">
+          <span class="number">10</span>
+          <span class="label">New Integrations</span>
+        </div>
+        <div class="hero-stat">
+          <span class="number">13</span>
+          <span class="label">Product Areas</span>
+        </div>
+        <div class="hero-stat">
+          <span class="number">1</span>
+          <span class="label">Release Date: Feb 1</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURE CARDS ── -->
+  <section class="features-section">
+    <div class="section-header">
+      <p class="section-label">What's New</p>
+      <h2 class="section-title">Every Feature. Every Category.</h2>
+      <p class="section-sub">Apollo 1 touches every corner of the platform — from ticketing to AI to billing. Here's what just landed.</p>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- Ticketing -->
+      <div class="card">
+        <span class="card-icon">🎫</span>
+        <div class="card-category">Ticketing</div>
+        <ul>
+          <li>Assign Tickets to Team</li>
+          <li>Create Invoice from Ticket</li>
+          <li>Signature Capture</li>
+          <li>Merge Tickets</li>
+          <li>Transfer Tickets</li>
+          <li>Email Replies</li>
+          <li>Job Costing</li>
+          <li>New Ticket Macros</li>
+          <li>Custom Tags</li>
+          <li>Custom Fields</li>
+        </ul>
+      </div>
+
+      <!-- Admin & Workflows -->
+      <div class="card">
+        <span class="card-icon">⚙️</span>
+        <div class="card-category">Admin &amp; Workflows</div>
+        <ul>
+          <li>Advanced List Filtering for Tickets</li>
+          <li>Bulk Actions for Tickets</li>
+          <li>Related Data List View</li>
+          <li>Exporting List View Templates</li>
+          <li>Import Database Templates</li>
+          <li>Summarized List Views</li>
+          <li>Multiple Email Address Handling (Inbound)</li>
+          <li>Event Driven Workflows</li>
+          <li>Audit Logs</li>
+        </ul>
+      </div>
+
+      <!-- AI & Revii -->
+      <div class="card">
+        <span class="card-icon">🤖</span>
+        <div class="card-category">AI &amp; Revii</div>
+        <ul>
+          <li>Revii for Inventory Management</li>
+          <li>Billing Capabilities Added to Revii</li>
+          <li>Revii UI Enhancements</li>
+          <li>Revii UX Enhancements</li>
+        </ul>
+      </div>
+
+      <!-- Integrations -->
+      <div class="card">
+        <span class="card-icon">🔗</span>
+        <div class="card-category">Integrations</div>
+        <ul>
+          <li>Acronis Integration</li>
+          <li>ADI Integration</li>
+          <li>Affiliated Integration</li>
+          <li>CMS Integration</li>
+          <li>D-Tools Integration</li>
+          <li>HubSpot Integration</li>
+          <li>N-Able Integration</li>
+          <li>NinjaOne Integration</li>
+          <li>QuickBooks Online</li>
+          <li>Rapid Response Integration</li>
+        </ul>
+      </div>
+
+      <!-- Billing -->
+      <div class="card">
+        <span class="card-icon">💰</span>
+        <div class="card-category">Billing</div>
+        <ul>
+          <li>Collections</li>
+          <li>GL Code Configuration</li>
+          <li>Metered Usage</li>
+          <li>Tax Exemptions</li>
+        </ul>
+      </div>
+
+      <!-- Inventory & Assets -->
+      <div class="card">
+        <span class="card-icon">📦</span>
+        <div class="card-category">Inventory &amp; Assets</div>
+        <ul>
+          <li>Change Providers on POs</li>
+          <li>Asset Configurations</li>
+          <li>Average Valuation</li>
+          <li>Role Based Access Controls (RBAC)</li>
+          <li>Custom Fields</li>
+        </ul>
+      </div>
+
+      <!-- Project Management -->
+      <div class="card">
+        <span class="card-icon">📋</span>
+        <div class="card-category">Project Management</div>
+        <ul>
+          <li>Create Projects</li>
+          <li>Create Phases</li>
+          <li>Create Tasks</li>
+        </ul>
+      </div>
+
+      <!-- Reporting -->
+      <div class="card">
+        <span class="card-icon">📊</span>
+        <div class="card-category">Reporting</div>
+        <ul>
+          <li>Financial Data Visibility</li>
+          <li>Core Reporting Enhancements</li>
+          <li>Analytics Revamp</li>
+        </ul>
+      </div>
+
+      <!-- Customers -->
+      <div class="card">
+        <span class="card-icon">👥</span>
+        <div class="card-category">Customers</div>
+        <ul>
+          <li>Document Storage</li>
+          <li>Parent–Child Account Support</li>
+          <li>Custom Fields</li>
+        </ul>
+      </div>
+
+      <!-- Servicing -->
+      <div class="card">
+        <span class="card-icon">🔧</span>
+        <div class="card-category">Servicing</div>
+        <ul>
+          <li>Display Billing Services</li>
+          <li>Update Contracts</li>
+          <li>Editable Services on Contracts</li>
+          <li>Recurring Service Agreements</li>
+        </ul>
+      </div>
+
+      <!-- Purchase Orders -->
+      <div class="card">
+        <span class="card-icon">🛒</span>
+        <div class="card-category">Purchase Orders</div>
+        <ul>
+          <li>Pre-Inventory Delete Products</li>
+          <li>Pre-Inventory Management</li>
+          <li>UX Improvements for POs</li>
+        </ul>
+      </div>
+
+      <!-- Payments & Scheduling -->
+      <div class="card">
+        <span class="card-icon">💳</span>
+        <div class="card-category">Payments &amp; Scheduling</div>
+        <ul>
+          <li>Compliant Surcharging</li>
+          <li>Weekly Dispatch Views</li>
+          <li>CommerceHub Partner Integration</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── VELOCITY CALLOUT ── -->
+  <section class="velocity-section">
+    <div class="velocity-inner">
+      <p class="section-label">Our Commitment</p>
+      <h2 class="section-title">We Ship Every Week</h2>
+      <div class="velocity-divider">
+        <span></span>
+        <span class="velocity-icon">🚀</span>
+        <span></span>
+      </div>
+      <p class="velocity-text">
+        Apollo 1 isn't a one-time push — it's proof of how we operate. Our team is obsessed with shipping value, closing gaps, and building the PSA platform that IT MSPs and CSPs have always deserved. Every week, something gets better. Every release, the list of "I wish it could do that" gets shorter. We're not just keeping pace with the market — we're setting it.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── INTEGRATIONS PILLS ── -->
+  <section class="integrations-section">
+    <p class="section-label">Native Integrations</p>
+    <h2 class="section-title">Your Stack, Connected</h2>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto;">
+      Apollo 1 ships 10 new integrations — connecting your PSA to the tools your team already lives in.
+    </p>
+    <div class="pills-container">
+      <div class="pill"><span class="pill-dot"></span>Acronis</div>
+      <div class="pill"><span class="pill-dot"></span>QuickBooks Online</div>
+      <div class="pill"><span class="pill-dot"></span>HubSpot</div>
+      <div class="pill"><span class="pill-dot"></span>NinjaOne</div>
+      <div class="pill"><span class="pill-dot"></span>N-able</div>
+      <div class="pill"><span class="pill-dot"></span>ADI</div>
+      <div class="pill"><span class="pill-dot"></span>Affiliated</div>
+      <div class="pill"><span class="pill-dot"></span>CMS</div>
+      <div class="pill"><span class="pill-dot"></span>D-Tools</div>
+      <div class="pill"><span class="pill-dot"></span>Rapid Response</div>
+      <div class="pill"><span class="pill-dot"></span>CommerceHub</div>
+    </div>
+  </section>
+
+  <!-- ── BOTTOM CTA BANNER ── -->
+  <section class="cta-banner">
+    <div class="cta-inner">
+      <p class="section-label">The Platform That Listens</p>
+      <h2 class="cta-headline">Ready for a<br />Fresh Look?</h2>
+      <p class="cta-sub">
+        See Apollo 1 in action. Book a personalized demo and discover why IT MSPs and CSPs are making the switch to Rev.io PSA.
+      </p>
+      <a href="https://rev.io" class="btn-demo-lg">
+        REQUEST DEMO
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 9H16M16 9L10 3M16 9L10 15" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <a href="https://rev.io" class="footer-logo">Rev<span>.</span>io</a>
+    <span class="footer-copy">© 2026 Rev.io. All rights reserved.</span>
+    <span class="footer-tagline">Apollo 1 · Live Now · Feb 2026</span>
+  </footer>
+
+</body>
+</html>
