@@ -1,40 +1,25 @@
 # TOOLS.md - Local Notes
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+## Ad Platform Access
 
-## What Goes Here
+### Google Ads
+- **Account:** 988-595-3623 (Rev.io)
+- **MCC:** 189-863-9009 (RevIO Bot manager account)
+- **API:** OAuth creds in `.google-ads-auth.json` — Basic access pending (~Mar 5)
+- **Google Ads Script:** "RevItUp Daily Report" — runs daily 7-8am, emails CSV to revitupbot@gmail.com
+- **Login:** revitupbot@gmail.com / Revio123!
 
-Things like:
+### LinkedIn Ads
+- **Account ID:** 514207537
+- **Campaign Manager:** https://www.linkedin.com/campaignmanager/accounts/514207537/
+- **Profile:** Revi Tupper (view access)
+- **Login:** revitupbot@gmail.com / Revio123!
 
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
+### Salesforce
+- **Instance:** https://rev-io.my.salesforce.com
+- **Auth:** `.salesforce-auth.json` (new Connected App, PKCE)
 
-## Examples
-
-```markdown
-### Cameras
-
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
-
-## Why Separate?
-
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
-
----
-
-Add whatever helps you do your job. This is your cheat sheet.
+### Gmail (bot account)
+- **Email:** revitupbot@gmail.com
+- **App password (IMAP):** in `.gmail-auth.json`
+- **Account password:** Revio123!
