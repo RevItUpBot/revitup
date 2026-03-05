@@ -715,6 +715,175 @@
       font-weight: 700;
     }
 
+    /* ── Email Cadence ── */
+    .cadence-overview {
+      margin-bottom: 48px;
+    }
+
+    .cadence-table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--platinum);
+      margin-bottom: 12px;
+    }
+
+    .cadence-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+
+    .cadence-table thead tr {
+      background: var(--prussian);
+      color: #fff;
+    }
+
+    .cadence-table thead th {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 18px;
+      text-align: left;
+    }
+
+    .cadence-table tbody tr {
+      border-bottom: 1px solid var(--platinum);
+      transition: background 0.15s;
+    }
+
+    .cadence-table tbody tr:hover { background: #f0f5ff; }
+    .cadence-table tbody tr:last-child { border-bottom: none; }
+
+    .cadence-table td {
+      padding: 14px 18px;
+      vertical-align: middle;
+      color: #333;
+    }
+
+    .email-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--prussian);
+      color: #fff;
+      border-radius: 50%;
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .email-date {
+      font-size: 0.78rem;
+      color: #888;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .sender-name {
+      font-weight: 700;
+      color: var(--prussian);
+      font-size: 0.9rem;
+    }
+
+    .sender-title {
+      font-size: 0.78rem;
+      color: #888;
+    }
+
+    .segments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 8px;
+    }
+
+    .segment-card {
+      border-radius: 12px;
+      border: 1px solid var(--platinum);
+      overflow: hidden;
+    }
+
+    .segment-card-header {
+      padding: 20px 24px 16px;
+      background: var(--prussian);
+    }
+
+    .segment-card-header.seg-b { background: var(--turquoise); }
+    .segment-card-header.seg-c { background: #5B21B6; }
+
+    .seg-letter {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: rgba(255,255,255,0.25);
+      line-height: 1;
+      float: right;
+      margin-top: -4px;
+    }
+
+    .segment-card-header h3 {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .segment-card-header .seg-goal {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+    }
+
+    .segment-card-body {
+      padding: 18px 24px 22px;
+      background: #fff;
+    }
+
+    .seg-email-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--platinum);
+    }
+
+    .seg-email-row:last-child { border-bottom: none; }
+
+    .seg-email-num {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: #aaa;
+      text-transform: uppercase;
+      min-width: 20px;
+      padding-top: 2px;
+    }
+
+    .seg-email-info { flex: 1; }
+
+    .seg-email-subject {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 3px;
+    }
+
+    .seg-email-cta {
+      font-size: 0.8rem;
+      color: #666;
+      line-height: 1.45;
+      font-style: italic;
+    }
+
     /* ── Footer ── */
     footer {
       background: var(--prussian-deeper);
@@ -749,6 +918,7 @@
       .groundwork-grid { grid-template-columns: 1fr; }
       .pillars-grid { grid-template-columns: 1fr; }
       .channel-grid { grid-template-columns: 1fr 1fr; }
+      .segments-grid { grid-template-columns: 1fr; }
       .hero-stats { gap: 28px; }
       .timeline::before { left: 20px; }
       .tl-marker { width: 43px; }
@@ -769,6 +939,7 @@
       <li><a href="#audience">Audience</a></li>
       <li><a href="#messaging">Messaging</a></li>
       <li><a href="#channels">Channels</a></li>
+      <li><a href="#cadence">Email Cadence</a></li>
       <li><a href="#timeline">Timeline</a></li>
     </ul>
   </nav>
@@ -1006,6 +1177,212 @@
       </div>
     </div>
   </section>
+
+  <!-- Email Cadence -->
+  <div class="section-dark" id="cadence">
+    <div class="section-dark-inner">
+      <p class="section-label">Email Campaign</p>
+      <h2 class="section-title">Email Cadence by Segment</h2>
+      <p class="section-desc">A 5-email sequence running weekly from March 10 through April 7, 2026. All segments receive the same core content — platform value, workflow walkthroughs, new capabilities, and FAQ — but the closing and CTA is calibrated to each group's expressed migration intent.</p>
+
+      <!-- Overview Table -->
+      <div class="cadence-overview">
+        <div class="cadence-table-wrap">
+          <table class="cadence-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Send Date</th>
+                <th>Subject Line</th>
+                <th>From</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="email-num">1</span></td>
+                <td><span class="email-date">March 10</span></td>
+                <td>To our Tigerpaw customers — a personal note</td>
+                <td><span class="sender-name">Brent Maropis</span><br><span class="sender-title">CEO, Rev.io</span></td>
+                <td>CEO intro &amp; vision</td>
+              </tr>
+              <tr>
+                <td><span class="email-num">2</span></td>
+                <td><span class="email-date">March 17</span></td>
+                <td>What's coming next for Tigerpaw customers</td>
+                <td><span class="sender-name">Will Steiner</span><br><span class="sender-title">VP Customer Success</span></td>
+                <td>Platform preview</td>
+              </tr>
+              <tr>
+                <td><span class="email-num">3</span></td>
+                <td><span class="email-date">March 24</span></td>
+                <td>See how your Tigerpaw workflows translate to Rev.io</td>
+                <td><span class="sender-name">Will Steiner</span><br><span class="sender-title">VP Customer Success</span></td>
+                <td>Workflow walkthrough</td>
+              </tr>
+              <tr>
+                <td><span class="email-num">4</span></td>
+                <td><span class="email-date">March 31</span></td>
+                <td>What Tigerpaw never had</td>
+                <td><span class="sender-name">Will Steiner</span><br><span class="sender-title">VP Customer Success</span></td>
+                <td>New capabilities</td>
+              </tr>
+              <tr>
+                <td><span class="email-num">5</span></td>
+                <td><span class="email-date">April 7</span></td>
+                <td>Tigerpaw migration questions, answered</td>
+                <td><span class="sender-name">Will Steiner</span><br><span class="sender-title">VP Customer Success</span></td>
+                <td>FAQ &amp; objection handling</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Segment Variations -->
+      <div class="segments-grid">
+
+        <!-- Segment A -->
+        <div class="segment-card">
+          <div class="segment-card-header seg-a">
+            <span class="seg-letter">A</span>
+            <h3>Segment A — Ready to Migrate</h3>
+            <p class="seg-goal">Confirm their decision, get them pre-scheduled, and reinforce that Rev.io is ready to support them.</p>
+          </div>
+          <div class="segment-card-body">
+            <div class="seg-email-row">
+              <div class="seg-email-num">E1</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">CEO personal note</div>
+                <div class="seg-email-cta">Scheduling opens in April — more details coming soon.</div>
+              </div>
+            </div>
+            <div class="seg-email-row">
+              <div class="seg-email-num">E2</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">Platform preview</div>
+                <div class="seg-email-cta">Watch the preview video. Pre-scheduling available now.</div>
+              </div>
+            </div>
+            <div class="seg-email-row">
+              <div class="seg-email-num">E3</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">Workflow walkthrough</div>
+                <div class="seg-email-cta">Watch the walkthrough. Reserve your migration window.</div>
+              </div>
+            </div>
+            <div class="seg-email-row">
+              <div class="seg-email-num">E4</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">New capabilities</div>
+                <div class="seg-email-cta">Schedule your migration — direct link CTA.</div>
+              </div>
+            </div>
+            <div class="seg-email-row">
+              <div class="seg-email-num">E5</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">FAQ &amp; objection handling</div>
+                <div class="seg-email-cta">Review full FAQ. Schedule your migration now.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Segment B -->
+        <div class="segment-card">
+          <div class="segment-card-header seg-b">
+            <span class="seg-letter">B</span>
+            <h3>Segment B — Migrate Later</h3>
+            <p class="seg-goal">Inspire them to reconsider the timeline and move sooner — while respecting that the decision is theirs.</p>
+          </div>
+          <div class="segment-card-body">
+            <div class="seg-email-row">
+              <div class="seg-email-num">E1</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">CEO personal note</div>
+                <div class="seg-email-cta">No pressure to commit — stay tuned for what's coming.</div>
+              </div>
+            </div>
+            <div class="seg-email-row">
+              <div class="seg-email-num">E2</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">Platform preview</div>
+                <div class="seg-email-cta">Watch the video. Pre-schedule when ready — no obligation.</div>
+              </div>
+            </div>
+            <div class="seg-email-row">
+              <div class="seg-email-num">E3</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">Workflow walkthrough</div>
+                <div class="seg-email-cta">Watch the walkthrough. Pre-schedule if this piqued interest.</div>
+              </div>
+            </div>
+            <div class="seg-email-row">
+              <div class="seg-email-num">E4</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">New capabilities</div>
+                <div class="seg-email-cta">We're confident this adds value. Pre-schedule when ready.</div>
+              </div>
+            </div>
+            <div class="seg-email-row">
+              <div class="seg-email-num">E5</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">FAQ &amp; objection handling</div>
+                <div class="seg-email-cta">Schedule when ready — or reply to talk through timing first.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Segment C -->
+        <div class="segment-card">
+          <div class="segment-card-header seg-c">
+            <span class="seg-letter">C</span>
+            <h3>Segment C — Not Interested</h3>
+            <p class="seg-goal">Keep them informed, address concerns, and gradually build the case without applying pressure.</p>
+          </div>
+          <div class="segment-card-body">
+            <div class="seg-email-row">
+              <div class="seg-email-num">E1</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">CEO personal note</div>
+                <div class="seg-email-cta">We respect where you're at. Our goal is to give you a full picture — not pressure you.</div>
+              </div>
+            </div>
+            <div class="seg-email-row">
+              <div class="seg-email-num">E2</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">Platform preview</div>
+                <div class="seg-email-cta">Watch the video. Hesitant? That's okay — reply with questions.</div>
+              </div>
+            </div>
+            <div class="seg-email-row">
+              <div class="seg-email-num">E3</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">Workflow walkthrough</div>
+                <div class="seg-email-cta">If this piqued interest, reply to discuss. No pressure otherwise.</div>
+              </div>
+            </div>
+            <div class="seg-email-row">
+              <div class="seg-email-num">E4</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">New capabilities</div>
+                <div class="seg-email-cta">Decision based on today's platform, not the past. Happy to talk.</div>
+              </div>
+            </div>
+            <div class="seg-email-row">
+              <div class="seg-email-num">E5</div>
+              <div class="seg-email-info">
+                <div class="seg-email-subject">FAQ &amp; objection handling</div>
+                <div class="seg-email-cta">Have questions before considering? We'd love to connect.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- Phased Timeline -->
   <div class="section-alt" id="timeline">
