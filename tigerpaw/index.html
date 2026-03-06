@@ -927,6 +927,143 @@
     @media (max-width: 520px) {
       .channel-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── Current Timeline ── */
+    .current-timeline {
+      margin-top: 8px;
+    }
+
+    .ctl-track {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      position: relative;
+    }
+
+    .ctl-line {
+      display: none; /* decorative, handled by card borders */
+    }
+
+    .ctl-phase {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .ctl-dot-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .ctl-dot {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 2;
+    }
+
+    .dot-green { background: var(--green); box-shadow: 0 4px 20px rgba(110,190,79,0.4); }
+    .dot-turquoise { background: var(--turquoise); box-shadow: 0 4px 20px rgba(35,153,181,0.4); }
+
+    .ctl-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px 28px 24px;
+      border: 1px solid var(--platinum);
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      position: relative;
+    }
+
+    .card-green  { border-top: 4px solid var(--green); }
+    .card-turquoise { border-top: 4px solid var(--turquoise); }
+
+    .ctl-date {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+
+    .card-turquoise .ctl-date { color: var(--turquoise); }
+
+    .ctl-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--prussian);
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .ctl-bullets {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .ctl-bullets li {
+      font-size: 0.94rem;
+      color: #444;
+      line-height: 1.6;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .ctl-bullets li::before {
+      content: '→';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .card-turquoise .ctl-bullets li::before { color: var(--turquoise); }
+
+    .ctl-tag {
+      background: var(--cultured);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--prussian);
+    }
+
+    .ctl-arrow {
+      font-size: 2.2rem;
+      color: var(--platinum);
+      font-weight: 300;
+      padding: 0 16px;
+      margin-top: 80px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    @media (max-width: 700px) {
+      .ctl-track { flex-direction: column; gap: 12px; }
+      .ctl-arrow { transform: rotate(90deg); margin: 0 auto; padding: 8px 0; }
+      .ctl-phase { width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -939,7 +1076,7 @@
       <li><a href="#audience">Audience</a></li>
       <li><a href="#messaging">Messaging</a></li>
       <li><a href="#channels">Channels</a></li>
-      <li><a href="#cadence">Email Cadence</a></li>
+      <li><a href="#timeline">Timeline</a></li>
     </ul>
   </nav>
 
@@ -950,6 +1087,65 @@
       <p class="hero-eyebrow">Tigerpaw → Rev.io PSA</p>
       <h1>Customer Migration<br><span class="accent">Marketing & Communication</span> Plan</h1>
       <p class="hero-sub">A coordinated, segment-driven campaign to guide all Tigerpaw legacy customers through a seamless transition to the new Rev.io PSA platform.</p>
+    </div>
+  </section>
+
+  <!-- Current Timeline -->
+  <section id="timeline">
+    <div class="section">
+      <p class="section-label">Updated Plan</p>
+      <h2 class="section-title">Current Timeline</h2>
+      <p class="section-desc">We've made the strategic decision to refine our approach — leading with a focused CS-driven migration of key accounts first, then amplifying those wins with a marketing campaign built on real proof.</p>
+
+      <div class="current-timeline">
+
+        <!-- Connector line -->
+        <div class="ctl-track">
+          <div class="ctl-line"></div>
+
+          <!-- Phase 1 -->
+          <div class="ctl-phase phase-1">
+            <div class="ctl-dot-wrap">
+              <div class="ctl-dot dot-green">
+                <span>1</span>
+              </div>
+            </div>
+            <div class="ctl-card card-green">
+              <div class="ctl-date">Now → April 1</div>
+              <h3 class="ctl-title">CS Migration &amp; Tool Refinement</h3>
+              <ul class="ctl-bullets">
+                <li>CS prioritizing <strong>5 Tigerpaw accounts</strong> from the <em>Ready to Move</em> sub-segment to move through the full migration process first</li>
+                <li>Perfecting the onboarding &amp; migration tool with a more templated, repeatable approach</li>
+                <li>Capturing learnings, success stories, and proof points from these early movers</li>
+              </ul>
+              <div class="ctl-tag">🎯 Goal: Proven process + real customer wins</div>
+            </div>
+          </div>
+
+          <!-- Arrow between phases -->
+          <div class="ctl-arrow">→</div>
+
+          <!-- Phase 2 -->
+          <div class="ctl-phase phase-2">
+            <div class="ctl-dot-wrap">
+              <div class="ctl-dot dot-turquoise">
+                <span>2</span>
+              </div>
+            </div>
+            <div class="ctl-card card-turquoise">
+              <div class="ctl-date">Mid-April → May 1</div>
+              <h3 class="ctl-title">Marketing Campaign Launch</h3>
+              <ul class="ctl-bullets">
+                <li>Full marketing campaign launches, anchored by <strong>migration success stories</strong> from the Phase 1 accounts</li>
+                <li>Messaging highlights real outcomes, not promises — proof-led rather than pitch-led</li>
+                <li>Broader outreach to remaining Tigerpaw segments using refined playbook and tooling</li>
+              </ul>
+              <div class="ctl-tag">📣 Goal: Scale with confidence and social proof</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1158,212 +1354,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Email Cadence -->
-  <div class="section-dark" id="cadence">
-    <div class="section-dark-inner">
-      <p class="section-label">Email Campaign</p>
-      <h2 class="section-title">Email Cadence by Segment</h2>
-      <p class="section-desc">A 5-email sequence running weekly from March 10 through April 7, 2026. All segments receive the same core content — platform value, workflow walkthroughs, new capabilities, and FAQ — but the closing and CTA is calibrated to each group's expressed migration intent.</p>
-
-      <!-- Overview Table -->
-      <div class="cadence-overview">
-        <div class="cadence-table-wrap">
-          <table class="cadence-table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Send Date</th>
-                <th>Subject Line</th>
-                <th>From</th>
-                <th>Purpose</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="email-num">1</span></td>
-                <td><span class="email-date">March 10</span></td>
-                <td>To our Tigerpaw customers — a personal note</td>
-                <td><span class="sender-name">Brent Maropis</span><br><span class="sender-title">CEO, Rev.io</span></td>
-                <td>CEO intro &amp; vision</td>
-              </tr>
-              <tr>
-                <td><span class="email-num">2</span></td>
-                <td><span class="email-date">March 17</span></td>
-                <td>What's coming next for Tigerpaw customers</td>
-                <td><span class="sender-name">Will Steiner</span><br><span class="sender-title">VP Customer Success</span></td>
-                <td>Platform preview</td>
-              </tr>
-              <tr>
-                <td><span class="email-num">3</span></td>
-                <td><span class="email-date">March 24</span></td>
-                <td>See how your Tigerpaw workflows translate to Rev.io</td>
-                <td><span class="sender-name">Will Steiner</span><br><span class="sender-title">VP Customer Success</span></td>
-                <td>Workflow walkthrough</td>
-              </tr>
-              <tr>
-                <td><span class="email-num">4</span></td>
-                <td><span class="email-date">March 31</span></td>
-                <td>What Tigerpaw never had</td>
-                <td><span class="sender-name">Will Steiner</span><br><span class="sender-title">VP Customer Success</span></td>
-                <td>New capabilities</td>
-              </tr>
-              <tr>
-                <td><span class="email-num">5</span></td>
-                <td><span class="email-date">April 7</span></td>
-                <td>Tigerpaw migration questions, answered</td>
-                <td><span class="sender-name">Will Steiner</span><br><span class="sender-title">VP Customer Success</span></td>
-                <td>FAQ &amp; objection handling</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Segment Variations -->
-      <div class="segments-grid">
-
-        <!-- Segment A -->
-        <div class="segment-card">
-          <div class="segment-card-header seg-a">
-            <span class="seg-letter">A</span>
-            <h3>Segment A — Ready to Migrate</h3>
-            <p class="seg-goal">Confirm their decision, get them pre-scheduled, and reinforce that Rev.io is ready to support them.</p>
-          </div>
-          <div class="segment-card-body">
-            <div class="seg-email-row">
-              <div class="seg-email-num">E1</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">CEO personal note</div>
-                <div class="seg-email-cta">Scheduling opens in April — more details coming soon.</div>
-              </div>
-            </div>
-            <div class="seg-email-row">
-              <div class="seg-email-num">E2</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">Platform preview</div>
-                <div class="seg-email-cta">Watch the preview video. Pre-scheduling available now.</div>
-              </div>
-            </div>
-            <div class="seg-email-row">
-              <div class="seg-email-num">E3</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">Workflow walkthrough</div>
-                <div class="seg-email-cta">Watch the walkthrough. Reserve your migration window.</div>
-              </div>
-            </div>
-            <div class="seg-email-row">
-              <div class="seg-email-num">E4</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">New capabilities</div>
-                <div class="seg-email-cta">Schedule your migration — direct link CTA.</div>
-              </div>
-            </div>
-            <div class="seg-email-row">
-              <div class="seg-email-num">E5</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">FAQ &amp; objection handling</div>
-                <div class="seg-email-cta">Review full FAQ. Schedule your migration now.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Segment B -->
-        <div class="segment-card">
-          <div class="segment-card-header seg-b">
-            <span class="seg-letter">B</span>
-            <h3>Segment B — Migrate Later</h3>
-            <p class="seg-goal">Inspire them to reconsider the timeline and move sooner — while respecting that the decision is theirs.</p>
-          </div>
-          <div class="segment-card-body">
-            <div class="seg-email-row">
-              <div class="seg-email-num">E1</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">CEO personal note</div>
-                <div class="seg-email-cta">No pressure to commit — stay tuned for what's coming.</div>
-              </div>
-            </div>
-            <div class="seg-email-row">
-              <div class="seg-email-num">E2</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">Platform preview</div>
-                <div class="seg-email-cta">Watch the video. Pre-schedule when ready — no obligation.</div>
-              </div>
-            </div>
-            <div class="seg-email-row">
-              <div class="seg-email-num">E3</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">Workflow walkthrough</div>
-                <div class="seg-email-cta">Watch the walkthrough. Pre-schedule if this piqued interest.</div>
-              </div>
-            </div>
-            <div class="seg-email-row">
-              <div class="seg-email-num">E4</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">New capabilities</div>
-                <div class="seg-email-cta">We're confident this adds value. Pre-schedule when ready.</div>
-              </div>
-            </div>
-            <div class="seg-email-row">
-              <div class="seg-email-num">E5</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">FAQ &amp; objection handling</div>
-                <div class="seg-email-cta">Schedule when ready — or reply to talk through timing first.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Segment C -->
-        <div class="segment-card">
-          <div class="segment-card-header seg-c">
-            <span class="seg-letter">C</span>
-            <h3>Segment C — Not Interested</h3>
-            <p class="seg-goal">Keep them informed, address concerns, and gradually build the case without applying pressure.</p>
-          </div>
-          <div class="segment-card-body">
-            <div class="seg-email-row">
-              <div class="seg-email-num">E1</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">CEO personal note</div>
-                <div class="seg-email-cta">We respect where you're at. Our goal is to give you a full picture — not pressure you.</div>
-              </div>
-            </div>
-            <div class="seg-email-row">
-              <div class="seg-email-num">E2</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">Platform preview</div>
-                <div class="seg-email-cta">Watch the video. Hesitant? That's okay — reply with questions.</div>
-              </div>
-            </div>
-            <div class="seg-email-row">
-              <div class="seg-email-num">E3</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">Workflow walkthrough</div>
-                <div class="seg-email-cta">If this piqued interest, reply to discuss. No pressure otherwise.</div>
-              </div>
-            </div>
-            <div class="seg-email-row">
-              <div class="seg-email-num">E4</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">New capabilities</div>
-                <div class="seg-email-cta">Decision based on today's platform, not the past. Happy to talk.</div>
-              </div>
-            </div>
-            <div class="seg-email-row">
-              <div class="seg-email-num">E5</div>
-              <div class="seg-email-info">
-                <div class="seg-email-subject">FAQ &amp; objection handling</div>
-                <div class="seg-email-cta">Have questions before considering? We'd love to connect.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
 
   <!-- Footer -->
   <footer>
