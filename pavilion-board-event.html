@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breaking In and Standing Out — Pavilion Women Executives | Atlanta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:       #0f0c1a;
+      --plum:      #2b1847;
+      --plum-mid:  #3d2364;
+      --plum-soft: #5b3a8c;
+      --gold:      #C9A96E;
+      --gold-lt:   #e4c98a;
+      --pearl:     #f7f4f0;
+      --white:     #ffffff;
+      --mist:      #ede9f2;
+      --text:      #2a2435;
+      --text-lt:   #6b6076;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans:  'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--pearl);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: var(--plum);
+      border-bottom: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 60px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 1.15rem;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo .pill {
+      background: var(--gold);
+      color: var(--plum);
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .nav-date {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--gold-lt);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(150deg, #1a0e30 0%, #2b1847 45%, #3d2364 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 90px 40px 80px;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 60%, rgba(201,169,110,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 20%, rgba(91,58,140,0.35) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Fine dot texture */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 22px;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 14px;
+      letter-spacing: 0.01em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+
+    .hero-sub {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+      font-style: italic;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 42px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .meta-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(201,169,110,0.35);
+      border-radius: 50px;
+      padding: 10px 22px;
+      color: var(--white);
+      font-size: 0.88rem;
+      font-weight: 400;
+      backdrop-filter: blur(6px);
+    }
+
+    .meta-chip svg {
+      flex-shrink: 0;
+      opacity: 0.75;
+    }
+
+    .meta-chip strong {
+      font-weight: 600;
+    }
+
+    /* ── SECTION BASE ── */
+    .section {
+      padding: 80px 40px;
+    }
+
+    .section-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--plum-soft);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--plum);
+      line-height: 1.15;
+      margin-bottom: 28px;
+    }
+
+    .section-divider {
+      width: 48px;
+      height: 3px;
+      background: var(--gold);
+      margin-bottom: 30px;
+      border-radius: 2px;
+    }
+
+    /* ── STATS BANNER ── */
+    .stats-section {
+      background: var(--plum);
+      padding: 64px 40px;
+    }
+
+    .stats-grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2px;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,169,110,0.2);
+      padding: 36px 32px;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .stat-card:first-child {
+      border-color: rgba(201,169,110,0.45);
+      background: rgba(201,169,110,0.07);
+    }
+
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: 3.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+    }
+
+    .stat-source {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    .stats-headline {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .stats-headline p {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+      font-style: italic;
+      color: rgba(255,255,255,0.9);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .stats-headline strong {
+      color: var(--gold-lt);
+      font-style: normal;
+    }
+
+    /* ── ABOUT ── */
+    .about-section {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    @media (max-width: 720px) {
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    .about-body {
+      font-size: 1.02rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .about-body p + p {
+      margin-top: 18px;
+    }
+
+    .takeaways {
+      background: var(--mist);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 28px 28px 28px 28px;
+    }
+
+    .takeaways h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--plum);
+      margin-bottom: 18px;
+    }
+
+    .takeaways ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .takeaways ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.93rem;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.55;
+    }
+
+    .takeaways ul li::before {
+      content: '→';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── SPEAKERS ── */
+    .speakers-section {
+      background: var(--pearl);
+    }
+
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .speaker-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(43,24,71,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .speaker-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(43,24,71,0.15);
+    }
+
+    .speaker-card.moderator {
+      border-top: 4px solid var(--gold);
+    }
+
+    .speaker-card.panelist {
+      border-top: 4px solid var(--plum-soft);
+    }
+
+    .speaker-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 28px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .speaker-card.moderator .speaker-avatar {
+      background: linear-gradient(135deg, var(--gold) 0%, #a87d3e 100%);
+    }
+
+    .speaker-card.panelist .speaker-avatar {
+      background: linear-gradient(135deg, var(--plum-mid) 0%, var(--plum-soft) 100%);
+    }
+
+    .speaker-body {
+      padding: 16px 22px 24px;
+      text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .speaker-role-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 3px 12px;
+      border-radius: 20px;
+      display: inline-block;
+      margin: 0 auto 12px;
+    }
+
+    .moderator .speaker-role-badge {
+      background: rgba(201,169,110,0.15);
+      color: #8a6020;
+    }
+
+    .panelist .speaker-role-badge {
+      background: rgba(91,58,140,0.1);
+      color: var(--plum-soft);
+    }
+
+    .speaker-name {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.18rem;
+      color: var(--plum);
+      margin-bottom: 4px;
+      line-height: 1.25;
+    }
+
+    .speaker-title {
+      font-size: 0.82rem;
+      color: var(--text-lt);
+      line-height: 1.45;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .linkedin-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #0a66c2;
+      text-decoration: none;
+      border: 1px solid rgba(10,102,194,0.25);
+      border-radius: 4px;
+      padding: 5px 12px;
+      transition: background 0.15s;
+      margin-top: auto;
+    }
+
+    .linkedin-link:hover {
+      background: rgba(10,102,194,0.06);
+    }
+
+    .linkedin-link svg {
+      flex-shrink: 0;
+    }
+
+    /* ── AGENDA ── */
+    .agenda-section {
+      background: var(--white);
+    }
+
+    .agenda-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 36px;
+      border-left: 2px solid var(--mist);
+      padding-left: 0;
+    }
+
+    .agenda-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 24px;
+      padding: 24px 0 24px 28px;
+      position: relative;
+      border-bottom: 1px solid var(--mist);
+    }
+
+    .agenda-item:last-child {
+      border-bottom: none;
+    }
+
+    .agenda-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 30px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+
+    .agenda-time {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--plum-soft);
+      padding-top: 3px;
+      line-height: 1.3;
+      white-space: nowrap;
+    }
+
+    .agenda-content h4 {
+      font-family: var(--font-serif);
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--plum);
+      margin-bottom: 6px;
+    }
+
+    .agenda-goal {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--text-lt);
+      margin-bottom: 10px;
+    }
+
+    .agenda-questions {
+      list-style: none;
+      padding: 0;
+    }
+
+    .agenda-questions li {
+      font-size: 0.88rem;
+      color: var(--text);
+      padding: 5px 0 5px 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .agenda-questions li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.75rem;
+    }
+
+    .agenda-questions li.follow-up {
+      color: var(--text-lt);
+      font-style: italic;
+      padding-left: 30px;
+      font-size: 0.83rem;
+    }
+
+    .agenda-questions li.follow-up::before {
+      content: '↳';
+      left: 14px;
+      color: var(--plum-soft);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--plum);
+      padding: 48px 40px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold-lt);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .footer-event {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+    }
+
+    .footer-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.4;
+      margin: 18px auto;
+    }
+
+    .footer-host {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.6;
+    }
+
+    .footer-host a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .hero { padding: 64px 24px 56px; }
+      .section { padding: 56px 24px; }
+      .stats-section { padding: 48px 24px; }
+      footer { padding: 40px 24px; }
+      .agenda-item { grid-template-columns: 1fr; gap: 6px; }
+      .agenda-time { padding-top: 0; }
+      .speakers-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 400px) {
+      .speakers-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#" class="nav-logo">
+    Pavilion <span class="pill">Women Executives</span>
+  </a>
+  <span class="nav-date">Atlanta · March 11, 2026</span>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Pavilion Executive Women's Group — Atlanta</div>
+    <h1>Breaking In<br><em>and</em> Standing Out</h1>
+    <p class="hero-sub">Women Leaders Navigating Board Service</p>
+    <div class="hero-meta">
+      <div class="meta-chip">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        <strong>Wednesday, March 11, 2026</strong>
+      </div>
+      <div class="meta-chip">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span>6:30 – 8:00 pm ET</span>
+      </div>
+      <div class="meta-chip">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <span>Alloy Office · 1115 Howell Mill Rd, Ste 600 · Atlanta, GA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<section class="stats-section">
+  <div class="stats-headline">
+    <p>We've made <strong>meaningful gains</strong> — but the path to equal representation in the boardroom is <strong>far from finished.</strong></p>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number">30%</div>
+      <div class="stat-label">of corporate board seats in the U.S. are held by women — even as women make up roughly half the workforce</div>
+      <div class="stat-source">50/50 Women on Boards</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">1/3</div>
+      <div class="stat-label">of S&amp;P 500 board directors are women — nearly double what it was a decade ago, but still far from parity</div>
+      <div class="stat-source">Morningstar</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">???</div>
+      <div class="stat-label">The real number of first board seats filled through open postings — it's not what you think</div>
+      <div class="stat-source">Ask tonight's panel</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="section about-section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">About This Session</div>
+        <h2 class="section-title">The path to the boardroom is opaque — until now.</h2>
+        <div class="section-divider"></div>
+        <div class="about-body">
+          <p>Board service is often positioned as the next logical step for senior women leaders — yet the path to that first board seat remains opaque, inconsistent, and full of unspoken rules.</p>
+          <p>This Pavilion Women Executive session cuts through the noise. Join seasoned board members who have successfully navigated — and helped reshape — the boardroom as they pull back the curtain on how women leaders actually break into board service, and how they stand out once they're there.</p>
+          <p>This is a practical, no-fluff conversation for women executives who are serious about board service — not someday, but <em>next</em>.</p>
+        </div>
+      </div>
+      <div class="takeaways">
+        <h3>You'll walk away with clarity on…</h3>
+        <ul>
+          <li>How first board seats are <em>really</em> won — not posted</li>
+          <li>Making the shift from executive operator to board-level director</li>
+          <li>What boards actually look for — and why readiness is often misjudged</li>
+          <li>The unspoken rules of your first 90 days in the boardroom</li>
+          <li>Turning one board seat into long-term board opportunity</li>
+          <li>Where you stand today, how to position yourself, and what to do next</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SPEAKERS ── -->
+<section class="section speakers-section">
+  <div class="section-inner">
+    <div class="section-label">Tonight's Voices</div>
+    <h2 class="section-title">Meet the Panel</h2>
+    <div class="section-divider"></div>
+    <div class="speakers-grid">
+
+      <!-- Jennifer Hopkins — Moderator -->
+      <div class="speaker-card moderator">
+        <div class="speaker-avatar">JH</div>
+        <div class="speaker-body">
+          <span class="speaker-role-badge">Moderator</span>
+          <div class="speaker-name">Jennifer Hopkins</div>
+          <div class="speaker-title">CMO, Rev.io<br>Pavilion Executive Women's Committee, Atlanta</div>
+        </div>
+      </div>
+
+      <!-- Lisa Robinson -->
+      <div class="speaker-card panelist">
+        <div class="speaker-avatar">LR</div>
+        <div class="speaker-body">
+          <span class="speaker-role-badge">Panelist</span>
+          <div class="speaker-name">Lisa Robinson</div>
+          <div class="speaker-title">CEO, OnBoard</div>
+          <a class="linkedin-link" href="https://www.linkedin.com/in/lisa-robinson-onboard/" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- Marva Bailer -->
+      <div class="speaker-card panelist">
+        <div class="speaker-avatar">MB</div>
+        <div class="speaker-body">
+          <span class="speaker-role-badge">Panelist</span>
+          <div class="speaker-name">Marva Bailer</div>
+          <div class="speaker-title">Board Director<br>Athena Alliance Member</div>
+          <a class="linkedin-link" href="https://www.linkedin.com/in/marvabailer/" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- Stacy Chick -->
+      <div class="speaker-card panelist">
+        <div class="speaker-avatar">SC</div>
+        <div class="speaker-body">
+          <span class="speaker-role-badge">Panelist</span>
+          <div class="speaker-name">Stacy Chick</div>
+          <div class="speaker-title">Board Director<br>Athena Alliance Member</div>
+          <a class="linkedin-link" href="https://www.linkedin.com/in/stacychick/" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── AGENDA ── -->
+<section class="section agenda-section">
+  <div class="section-inner">
+    <div class="section-label">Run of Show</div>
+    <h2 class="section-title">Evening Agenda</h2>
+    <div class="section-divider"></div>
+
+    <div class="agenda-list">
+
+      <div class="agenda-item">
+        <div class="agenda-time">0:00 – 0:05</div>
+        <div class="agenda-content">
+          <h4>Welcome &amp; Framing</h4>
+          <p class="agenda-goal">Set tone. Create urgency. Why this conversation, why now.</p>
+          <ul class="agenda-questions">
+            <li>The myth of "board service as the next logical step"</li>
+            <li>The reality: opaque process + unspoken rules</li>
+            <li>What you'll walk away with: clarity, positioning, next steps</li>
+            <li>Internal clarity → external access → long-term influence</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">0:05 – 0:20</div>
+        <div class="agenda-content">
+          <h4>Segment 1 — Am I Actually Board-Ready?</h4>
+          <p class="agenda-goal">Kill ambiguity and imposter syndrome.</p>
+          <ul class="agenda-questions">
+            <li>What qualifications matter most — and which are overrated?</li>
+            <li class="follow-up">Where do you see high-performing women disqualifying themselves unnecessarily?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">0:20 – 0:35</div>
+        <div class="agenda-content">
+          <h4>Segment 2 — Positioning &amp; Story</h4>
+          <p class="agenda-goal">Translating executive experience into board value.</p>
+          <ul class="agenda-questions">
+            <li>How should executives reframe their experience to sound board-relevant?</li>
+            <li class="follow-up">What does a strong board bio include that most people miss?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">0:35 – 0:55</div>
+        <div class="agenda-content">
+          <h4>Segment 3 — How First Board Seats Are Actually Filled</h4>
+          <p class="agenda-goal">Replace mystery with truth.</p>
+          <ul class="agenda-questions">
+            <li>What finally opened the door to your first board seat?</li>
+            <li class="follow-up">If you're not already "in the room," how do you get invited?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">0:55 – 1:10</div>
+        <div class="agenda-content">
+          <h4>Segment 4 — The First 90 Days</h4>
+          <p class="agenda-goal">Prepare them to succeed, not just land the seat.</p>
+          <ul class="agenda-questions">
+            <li>What surprised you most about your first board role?</li>
+            <li class="follow-up">What mistakes hurt credibility early?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">1:10 – 1:20</div>
+        <div class="agenda-content">
+          <h4>Segment 5 — Turning One Seat into a Career (and Pulling Others In)</h4>
+          <p class="agenda-goal">Elevate the conversation beyond access.</p>
+          <ul class="agenda-questions">
+            <li>What separates a good board member from an exceptional one?</li>
+            <li>When should someone say no?</li>
+            <li>What responsibility do women on boards have to sponsor others?</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Pavilion · Executive Women's Group</div>
+    <div class="footer-event">Atlanta Chapter · March 11, 2026</div>
+    <div class="footer-divider"></div>
+    <div class="footer-host">
+      Hosted at <strong style="color:rgba(255,255,255,0.7)">Alloy Office</strong> · 1115 Howell Mill Rd, Suite 600 · Atlanta, GA 30318<br>
+      <a href="https://www.joinpavilion.com/" target="_blank" rel="noopener">joinpavilion.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
