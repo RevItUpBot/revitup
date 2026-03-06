@@ -928,6 +928,41 @@
       .channel-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── Advocacy Callout ── */
+    .advocacy-callout {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background: linear-gradient(135deg, #f0f7eb 0%, #e8f4f8 100%);
+      border: 1px solid rgba(110,190,79,0.3);
+      border-left: 5px solid var(--green);
+      border-radius: 12px;
+      padding: 28px 32px;
+      max-width: 860px;
+    }
+
+    .advocacy-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .advocacy-title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--prussian);
+      margin-bottom: 6px;
+    }
+
+    .advocacy-text {
+      font-size: 0.97rem;
+      color: #444;
+      line-height: 1.65;
+    }
+
     /* ── Simple Timeline ── */
     .simple-timeline {
       list-style: none;
@@ -1289,6 +1324,19 @@
       </div>
     </div>
   </div>
+
+  <!-- Advocacy Callout -->
+  <section>
+    <div class="section" style="padding-top: 0;">
+      <div class="advocacy-callout">
+        <div class="advocacy-icon">🗣️</div>
+        <div class="advocacy-body">
+          <h3 class="advocacy-title">Tigerpaw Advocacy</h3>
+          <p class="advocacy-text">Marketing + CS working to capture TP customer advocacy now and throughout the process. Will leverage direct testimonials from the 5 initial migrated customers to help others follow suit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Channel Strategy -->
   <section id="channels">
