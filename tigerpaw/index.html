@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tigerpaw → Rev.io PSA Migration — Marketing & Communication Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --prussian: #1D3756;
+      --prussian-dark: #152843;
+      --prussian-deeper: #0f1e33;
+      --green: #6EBE4F;
+      --turquoise: #2399B5;
+      --cultured: #F8F8F8;
+      --platinum: #E6E7E8;
+      --grad-dark: linear-gradient(135deg, #1B3B61 0%, #194477 100%);
+      --font-head: 'Barlow Condensed', 'Oswald', sans-serif;
+      --font-body: 'Nunito Sans', 'Source Sans Pro', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--cultured);
+      color: #222;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: var(--prussian-deeper);
+      border-bottom: 3px solid var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--green); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--green); }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--grad-dark);
+      position: relative;
+      overflow: hidden;
+      padding: 100px 40px 90px;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(110,190,79,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 30%, rgba(35,153,181,0.15) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 .accent { color: var(--green); }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 640px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(110,190,79,0.18);
+      border: 1px solid rgba(110,190,79,0.45);
+      color: var(--green);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 7px 20px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 52px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .hero-stat { text-align: center; }
+
+    .hero-stat .number {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 3rem;
+      color: #fff;
+      line-height: 1;
+      display: block;
+    }
+
+    .hero-stat .number .unit {
+      font-size: 1.8rem;
+      color: var(--green);
+    }
+
+    .hero-stat .label {
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-top: 6px;
+      display: block;
+    }
+
+    /* ── Section Wrapper ── */
+    .section {
+      padding: 72px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-alt {
+      background: #fff;
+    }
+
+    .section-alt-inner {
+      padding: 72px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-dark {
+      background: var(--prussian-deeper);
+      color: #fff;
+    }
+
+    .section-dark-inner {
+      padding: 72px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ── Section Headers ── */
+    .section-label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--prussian);
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .section-dark .section-title,
+    .section-dark-inner .section-title { color: #fff; }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 700px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .section-dark-inner .section-desc { color: rgba(255,255,255,0.72); }
+
+    /* ── What We've Been Doing ── */
+    .groundwork-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 8px;
+    }
+
+    .groundwork-card {
+      background: var(--cultured);
+      border: 1px solid var(--platinum);
+      border-radius: 12px;
+      padding: 32px;
+      border-top: 4px solid var(--turquoise);
+    }
+
+    .groundwork-card.green-top { border-top-color: var(--green); }
+
+    .groundwork-card h3 {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--prussian);
+      margin-bottom: 18px;
+    }
+
+    .groundwork-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .groundwork-card ul li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.97rem;
+      color: #444;
+    }
+
+    .groundwork-card ul li::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--turquoise);
+      flex-shrink: 0;
+    }
+
+    .groundwork-card.green-top ul li::before { background: var(--green); }
+
+    /* ── Target Audience ── */
+    .audience-intro {
+      background: linear-gradient(135deg, #1B3B61 0%, #194477 100%);
+      border-radius: 14px;
+      padding: 36px 40px;
+      margin-bottom: 36px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .audience-intro-text {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .audience-intro-text p {
+      color: rgba(255,255,255,0.82);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .audience-intro-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .aud-stat .num {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2.6rem;
+      color: #fff;
+      display: block;
+      line-height: 1;
+    }
+
+    .aud-stat .num span { color: var(--green); }
+
+    .aud-stat .lbl {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+      display: block;
+    }
+
+    .segment-tabs {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .seg-tab {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 6px;
+      cursor: default;
+      border: none;
+    }
+
+    .seg-tab.onprem {
+      background: rgba(29,55,86,0.12);
+      color: var(--prussian);
+    }
+
+    .seg-tab.hosted {
+      background: rgba(35,153,181,0.13);
+      color: var(--turquoise);
+    }
+
+    .seg-table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--platinum);
+      margin-bottom: 28px;
+    }
+
+    .seg-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+
+    .seg-table thead tr {
+      background: var(--prussian);
+      color: #fff;
+    }
+
+    .seg-table thead th {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 18px;
+      text-align: left;
+    }
+
+    .seg-table tbody tr {
+      border-bottom: 1px solid var(--platinum);
+      transition: background 0.15s;
+    }
+
+    .seg-table tbody tr:hover { background: #f0f5ff; }
+    .seg-table tbody tr:last-child { border-bottom: none; }
+
+    .seg-table td {
+      padding: 14px 18px;
+      vertical-align: top;
+      color: #333;
+    }
+
+    .seg-table .group-header td {
+      background: rgba(29,55,86,0.06);
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--prussian);
+    }
+
+    .seg-table .group-header.hosted-header td {
+      background: rgba(35,153,181,0.08);
+      color: var(--turquoise);
+    }
+
+    .badge-intent {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .intent-asap { background: rgba(110,190,79,0.15); color: #3a7a20; }
+    .intent-later { background: rgba(35,153,181,0.13); color: #1a6f88; }
+    .intent-dont { background: rgba(220,50,50,0.12); color: #b03030; }
+    .intent-unknown { background: rgba(150,150,150,0.15); color: #666; }
+
+    .count-pill {
+      display: inline-block;
+      background: var(--prussian);
+      color: #fff;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 3px 11px;
+      border-radius: 20px;
+    }
+
+    /* ── Messaging Pillars ── */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .pillar-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 30px;
+      transition: background 0.2s;
+    }
+
+    .pillar-card:hover { background: rgba(255,255,255,0.1); }
+
+    .pillar-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .pillar-card h3 {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .pillar-card p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.65;
+    }
+
+    /* ── Channel Strategy ── */
+    .channel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .channel-card {
+      background: #fff;
+      border: 1px solid var(--platinum);
+      border-radius: 12px;
+      padding: 26px;
+      border-top: 3px solid var(--turquoise);
+    }
+
+    .channel-card.green-ch { border-top-color: var(--green); }
+    .channel-card.purple-ch { border-top-color: #8B5CF6; }
+    .channel-card.orange-ch { border-top-color: #F59E0B; }
+    .channel-card.teal-ch { border-top-color: #14B8A6; }
+    .channel-card.rose-ch { border-top-color: #F43F5E; }
+
+    .channel-icon {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .channel-card h3 {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--prussian);
+      margin-bottom: 6px;
+    }
+
+    .channel-meta {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--turquoise);
+      margin-bottom: 10px;
+    }
+
+    .channel-card p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* ── Timeline ── */
+    .timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--green), var(--turquoise), var(--prussian));
+      border-radius: 2px;
+    }
+
+    .tl-item {
+      display: flex;
+      gap: 32px;
+      padding-bottom: 40px;
+      position: relative;
+    }
+
+    .tl-item:last-child { padding-bottom: 0; }
+
+    .tl-marker {
+      flex-shrink: 0;
+      width: 59px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .tl-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--green);
+      border: 3px solid var(--cultured);
+      margin-top: 4px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 0 3px var(--green);
+    }
+
+    .tl-dot.turquoise {
+      background: var(--turquoise);
+      box-shadow: 0 0 0 3px var(--turquoise);
+    }
+
+    .tl-dot.prussian {
+      background: var(--prussian);
+      box-shadow: 0 0 0 3px var(--prussian);
+    }
+
+    .tl-dot.gold {
+      background: #F59E0B;
+      box-shadow: 0 0 0 3px #F59E0B;
+    }
+
+    .tl-content {
+      flex: 1;
+      background: #fff;
+      border: 1px solid var(--platinum);
+      border-radius: 12px;
+      padding: 28px 32px;
+    }
+
+    .tl-phase-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+
+    .tl-phase-label.turquoise { color: var(--turquoise); }
+    .tl-phase-label.prussian { color: var(--prussian); }
+    .tl-phase-label.gold { color: #D97706; }
+
+    .tl-content h3 {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--prussian);
+      margin-bottom: 4px;
+    }
+
+    .tl-dates {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #888;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .tl-tracks {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .tl-track {
+      background: var(--cultured);
+      border-radius: 8px;
+      padding: 14px 18px;
+    }
+
+    .tl-track-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--prussian);
+      margin-bottom: 6px;
+    }
+
+    .tl-track-title.hosted { color: var(--turquoise); }
+    .tl-track-title.onprem { color: #5B21B6; }
+    .tl-track-title.unknown { color: #888; }
+    .tl-track-title.all { color: var(--green); }
+
+    .tl-track ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .tl-track ul li {
+      font-size: 0.9rem;
+      color: #555;
+      display: flex;
+      gap: 8px;
+    }
+
+    .tl-track ul li::before {
+      content: '→';
+      color: var(--turquoise);
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    /* ── Email Cadence ── */
+    .cadence-overview {
+      margin-bottom: 48px;
+    }
+
+    .cadence-table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      margin-bottom: 12px;
+    }
+
+    .cadence-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+
+    .cadence-table thead tr {
+      background: var(--prussian);
+      color: #fff;
+    }
+
+    .cadence-table thead th {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 18px;
+      text-align: left;
+    }
+
+    .cadence-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      transition: background 0.15s;
+    }
+
+    .cadence-table tbody tr:hover { background: rgba(255,255,255,0.06); }
+    .cadence-table tbody tr:last-child { border-bottom: none; }
+
+    .cadence-table td {
+      padding: 14px 18px;
+      vertical-align: middle;
+      color: #fff;
+    }
+
+    .email-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--prussian);
+      color: #fff;
+      border-radius: 50%;
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .email-date {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .sender-name {
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    .sender-title {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .segments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 8px;
+    }
+
+    .segment-card {
+      border-radius: 12px;
+      border: 1px solid var(--platinum);
+      overflow: hidden;
+    }
+
+    .segment-card-header {
+      padding: 20px 24px 16px;
+      background: var(--prussian);
+    }
+
+    .segment-card-header.seg-b { background: var(--turquoise); }
+    .segment-card-header.seg-c { background: #5B21B6; }
+
+    .seg-letter {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: rgba(255,255,255,0.25);
+      line-height: 1;
+      float: right;
+      margin-top: -4px;
+    }
+
+    .segment-card-header h3 {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .segment-card-header .seg-goal {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+    }
+
+    .segment-card-body {
+      padding: 18px 24px 22px;
+      background: #fff;
+    }
+
+    .seg-email-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--platinum);
+    }
+
+    .seg-email-row:last-child { border-bottom: none; }
+
+    .seg-email-num {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: #aaa;
+      text-transform: uppercase;
+      min-width: 20px;
+      padding-top: 2px;
+    }
+
+    .seg-email-info { flex: 1; }
+
+    .seg-email-subject {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 3px;
+    }
+
+    .seg-email-cta {
+      font-size: 0.8rem;
+      color: #666;
+      line-height: 1.45;
+      font-style: italic;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--prussian-deeper);
+      border-top: 3px solid var(--green);
+      padding: 36px 40px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.5rem;
+      letter-spacing: 0.04em;
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span { color: var(--green); }
+
+    footer p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 70px 24px 60px; }
+      .section, .section-alt-inner, .section-dark-inner { padding: 52px 24px; }
+      .groundwork-grid { grid-template-columns: 1fr; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .channel-grid { grid-template-columns: 1fr 1fr; }
+      .segments-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 28px; }
+      .timeline::before { left: 20px; }
+      .tl-marker { width: 43px; }
+    }
+
+    @media (max-width: 520px) {
+      .channel-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Advocacy Callout ── */
+    .advocacy-callout {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background: linear-gradient(135deg, #f0f7eb 0%, #e8f4f8 100%);
+      border: 1px solid rgba(110,190,79,0.3);
+      border-left: 5px solid var(--green);
+      border-radius: 12px;
+      padding: 28px 32px;
+    }
+
+    .advocacy-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .advocacy-title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--prussian);
+      margin-bottom: 6px;
+    }
+
+    .advocacy-text {
+      font-size: 0.97rem;
+      color: #444;
+      line-height: 1.65;
+    }
+
+    /* ── Simple Timeline ── */
+    .simple-timeline {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 720px;
+    }
+
+    .simple-timeline li {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .simple-timeline li::before {
+      content: '→';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .simple-timeline li strong {
+      color: var(--prussian);
+    }
+
+    /* ── Current Timeline ── */
+    .current-timeline {
+      margin-top: 8px;
+    }
+
+    .ctl-track {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      position: relative;
+    }
+
+    .ctl-line {
+      display: none; /* decorative, handled by card borders */
+    }
+
+    .ctl-phase {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .ctl-dot-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .ctl-dot {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 2;
+    }
+
+    .dot-green { background: var(--green); box-shadow: 0 4px 20px rgba(110,190,79,0.4); }
+    .dot-turquoise { background: var(--turquoise); box-shadow: 0 4px 20px rgba(35,153,181,0.4); }
+
+    .ctl-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px 28px 24px;
+      border: 1px solid var(--platinum);
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      position: relative;
+    }
+
+    .card-green  { border-top: 4px solid var(--green); }
+    .card-turquoise { border-top: 4px solid var(--turquoise); }
+
+    .ctl-date {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+
+    .card-turquoise .ctl-date { color: var(--turquoise); }
+
+    .ctl-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--prussian);
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .ctl-bullets {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .ctl-bullets li {
+      font-size: 0.94rem;
+      color: #444;
+      line-height: 1.6;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .ctl-bullets li::before {
+      content: '→';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .card-turquoise .ctl-bullets li::before { color: var(--turquoise); }
+
+    .ctl-tag {
+      background: var(--cultured);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--prussian);
+    }
+
+    .ctl-arrow {
+      font-size: 2.2rem;
+      color: var(--platinum);
+      font-weight: 300;
+      padding: 0 16px;
+      margin-top: 80px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    @media (max-width: 700px) {
+      .ctl-track { flex-direction: column; gap: 12px; }
+      .ctl-arrow { transform: rotate(90deg); margin: 0 auto; padding: 8px 0; }
+      .ctl-phase { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="#" class="nav-logo">Rev<span>.</span>io</a>
+    <ul class="nav-links">
+      <li><a href="#background">Background</a></li>
+      <li><a href="#audience">Audience</a></li>
+      <li><a href="#messaging">Messaging</a></li>
+      <li><a href="#channels">Channels</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">Confidential — Internal</div>
+      <p class="hero-eyebrow">Tigerpaw → Rev.io PSA</p>
+      <h1>Customer Migration<br><span class="accent">Marketing & Communication</span> Plan</h1>
+      <p class="hero-sub">A coordinated, segment-driven campaign to guide all Tigerpaw legacy customers through a seamless transition to the new Rev.io PSA platform.</p>
+    </div>
+  </section>
+
+  <!-- Current Timeline -->
+  <section id="timeline">
+    <div class="section">
+      <p class="section-label">Updated Plan</p>
+      <h2 class="section-title">Current Timeline</h2>
+      <ul class="simple-timeline">
+        <li><strong>Now – April 1:</strong> Select 5 Ready to Move accounts to go through migration first; Product building templated migration tool to ensure TP satisfaction</li>
+        <li><strong>Mid-April – May 1:</strong> Marketing to begin campaign <em>(details on page below)</em></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Background -->
+  <section id="background">
+    <div class="section">
+      <p class="section-label">Foundation</p>
+      <h2 class="section-title">What We've Been Doing</h2>
+      <p class="section-desc">Over the past year, both Customer Success and Marketing have been laying the groundwork for this migration. While not overtly promoting the new platform, planting seeds about what was coming and how we were building product parity for what they needed.</p>
+      <div class="groundwork-grid">
+        <div class="groundwork-card green-top">
+          <h3>Customer Success</h3>
+          <ul>
+            <li>Focus Groups with Tigerpaw customers</li>
+            <li>Beta &amp; Early Access Programs</li>
+            <li>Client Business Reviews</li>
+            <li>Support ticket touchpoints highlighting Focus Groups &amp; Beta Access</li>
+          </ul>
+        </div>
+        <div class="groundwork-card">
+          <h3>Marketing</h3>
+          <ul>
+            <li>Email signature campaigns introducing the new platform</li>
+            <li>Organic social media featuring development progress</li>
+            <li>Tradeshow presence and live demonstrations</li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target Audience -->
+  <div class="section-alt" id="audience">
+    <div class="section-alt-inner">
+      <p class="section-label">Segmentation</p>
+      <h2 class="section-title">Target Audience</h2>
+      <p class="section-desc">The campaign covers 543 accounts across two primary groups. Hosted (Unleashed) customers are the top business priority — migrating them off the legacy Unleashed platform is the primary objective. On-Prem (Tigerpaw) customers are also a high priority given ongoing hosting costs. Each group is divided into four sub-segments based on stated migration intent, with tailored outreach for each.</p>
+
+      <div class="audience-intro">
+        <div class="audience-intro-text">
+          <p>The <strong style="color:#fff;">"Unknown"</strong> segment across both groups requires particular care. We do not know their appetite to migrate and cannot risk inadvertently creating a reason to churn. These accounts receive a softer, newsletter-style cadence — and open/click intent data is used to gauge readiness before escalating to a direct migration ask.</p>
+        </div>
+        <div class="audience-intro-stats">
+          <div class="aud-stat">
+            <span class="num">314<span> On-Prem</span></span>
+            <span class="lbl">Tigerpaw Accounts</span>
+          </div>
+          <div class="aud-stat">
+            <span class="num">178<span> Hosted</span></span>
+            <span class="lbl">Unleashed Accounts</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="segment-tabs">
+        <span class="seg-tab onprem">On-Prem (Tigerpaw)</span>
+        <span class="seg-tab hosted">Hosted (Unleashed)</span>
+      </div>
+
+      <div class="seg-table-wrap">
+        <table class="seg-table">
+          <thead>
+            <tr>
+              <th>Group</th>
+              <th>Sub-Segment</th>
+              <th># Accounts</th>
+              <th>Outreach Approach</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="group-header">
+              <td colspan="4">On-Prem (Tigerpaw) — 365 Accounts</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="badge-intent intent-asap">Migrate ASAP</span></td>
+              <td><span class="count-pill">77</span></td>
+              <td>Priority outreach — full migration campaign cadence; direct AM engagement</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="badge-intent intent-later">Migrate Later</span></td>
+              <td><span class="count-pill">52</span></td>
+              <td>Standard campaign cadence; nurture with platform education and roadmap content</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="badge-intent intent-dont">Don't Want to Move</span></td>
+              <td><span class="count-pill">29</span></td>
+              <td>High-touch CS engagement; address objections 1:1; emphasize rate loyalty and product parity</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="badge-intent intent-unknown">Unknown</span></td>
+              <td><span class="count-pill">207</span></td>
+              <td>Soft cadence — newsletter-style emails with platform content; use open/click intent data to gauge readiness before escalating</td>
+            </tr>
+            <tr class="group-header hosted-header">
+              <td colspan="4">Hosted (Unleashed) — Priority Wave</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="badge-intent intent-asap">Migrate ASAP</span></td>
+              <td><span class="count-pill">38</span></td>
+              <td>Standard campaign cadence; proactive AM outreach</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="badge-intent intent-later">Migrate Later</span></td>
+              <td><span class="count-pill">26</span></td>
+              <td>Nurture cadence; platform education and Community content</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="badge-intent intent-dont">Don't Want to Move</span></td>
+              <td><span class="count-pill">7</span></td>
+              <td>CS-led 1:1 conversations; understand blockers; focus on product parity and stability</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="badge-intent intent-unknown">Unknown</span></td>
+              <td><span class="count-pill">107</span></td>
+              <td>Soft cadence — newsletter-style emails with platform content; use open/click intent data to gauge readiness before escalating</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Messaging Pillars -->
+  <div class="section-dark" id="messaging">
+    <div class="section-dark-inner">
+      <p class="section-label">Core Messaging</p>
+      <h2 class="section-title">Four Messaging Pillars</h2>
+      <p class="section-desc">Messaging is tailored by sub-segment and intent. All audiences, however, share four universal pillars that anchor every communication.</p>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <span class="pillar-icon">🚀</span>
+          <h3>Platform Value</h3>
+          <p>Five key differentiators — web-based access, mobile app, Revii AI agent, Community, and rapid development velocity — plus Cyber Protect and an exciting product roadmap that shows where we're going next.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-icon">✅</span>
+          <h3>Product Parity</h3>
+          <p>Feature-for-feature coverage for every existing Tigerpaw workflow, supported by side-by-side capability collateral. Customers can see exactly what they have today maps to in the new platform — and more.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-icon">⚡</span>
+          <h3>Seamless Transition</h3>
+          <p>Our new automated migration tool ensures complete data integrity and minimal disruption. Customers don't have to worry about losing what they've built — the tool handles the heavy lifting.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-icon">🤝</span>
+          <h3>Rate Loyalty</h3>
+          <p>We are honoring existing customer rates as a thank-you for their patience and continued partnership through the transition period. This is a tangible signal of appreciation — and a powerful retention lever.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Advocacy Callout -->
+  <section>
+    <div class="section">
+      <div class="advocacy-callout">
+        <div class="advocacy-icon">🗣️</div>
+        <div class="advocacy-body">
+          <h3 class="advocacy-title">Tigerpaw Advocacy</h3>
+          <p class="advocacy-text">Marketing + CS working to capture TP customer advocacy now and throughout the process. Will leverage direct testimonials from the 5 initial migrated customers to help others follow suit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Channel Strategy -->
+  <section id="channels">
+    <div class="section">
+      <p class="section-label">Channel Strategy</p>
+      <h2 class="section-title">Multi-Channel Touchpoints</h2>
+      <p class="section-desc">A coordinated multi-channel approach ensures every account is reached through consistent, appropriately sequenced touchpoints.</p>
+      <div class="channel-grid">
+        <div class="channel-card green-ch">
+          <div class="channel-icon">📧</div>
+          <h3>Email Drip</h3>
+          <div class="channel-meta">Primary Nurture &amp; CTA</div>
+          <p>Primary nurture &amp; CTA vehicle. Countdown announcements, feature spotlights, and launch-day calls to action — segmented by bucket.</p>
+        </div>
+        <div class="channel-card">
+          <div class="channel-icon">🎥</div>
+          <h3>Webinars</h3>
+          <div class="channel-meta">Demo &amp; Q&amp;A</div>
+          <p>Live platform demo and Q&amp;A sessions, including a Cyber Protect deep-dive to showcase next-level platform value.</p>
+        </div>
+        <div class="channel-card purple-ch">
+          <div class="channel-icon">👤</div>
+          <h3>Account Manager</h3>
+          <div class="channel-meta">1:1 Outreach</div>
+          <p>Personalized outreach for every account — especially churn-risk and "Don't Want to Move" segments. Migration scheduling and white-glove support.</p>
+        </div>
+        <div class="channel-card orange-ch">
+          <div class="channel-icon">📚</div>
+          <h3>Knowledge Base</h3>
+          <div class="channel-meta">Self-Service Resources</div>
+          <p>Self-service resource hub: migration guides, FAQs, and video walkthroughs — live on Day 1 and continuously updated.</p>
+        </div>
+        <div class="channel-card teal-ch">
+          <div class="channel-icon">📣</div>
+          <h3>Social &amp; Blog</h3>
+          <div class="channel-meta">Thought Leadership</div>
+          <p>Thought leadership and social proof: customer migration stories, feature announcements, and roadmap previews.</p>
+        </div>
+        <div class="channel-card rose-ch">
+          <div class="channel-icon">💬</div>
+          <h3>Community</h3>
+          <div class="channel-meta">Ongoing</div>
+          <p>Peer collaboration and feedback loop: migration tips, feature voting, best practices, and live Q&amp;A threads — powered by customer advocates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">Rev<span>.</span>io</div>
+    <p>Tigerpaw Legacy → Rev.io PSA &nbsp;·&nbsp; Marketing &amp; Communication Plan &nbsp;·&nbsp; Confidential Internal Document</p>
+  </footer>
+
+</body>
+</html>
