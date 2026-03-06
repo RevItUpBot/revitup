@@ -928,6 +928,35 @@
       .channel-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── Simple Timeline ── */
+    .simple-timeline {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 720px;
+    }
+
+    .simple-timeline li {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .simple-timeline li::before {
+      content: '→';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .simple-timeline li strong {
+      color: var(--prussian);
+    }
+
     /* ── Current Timeline ── */
     .current-timeline {
       margin-top: 8px;
@@ -1095,40 +1124,10 @@
     <div class="section">
       <p class="section-label">Updated Plan</p>
       <h2 class="section-title">Current Timeline</h2>
-      <p class="section-desc">Updated approach based on our latest decisions.</p>
-
-      <div class="current-timeline">
-        <div class="ctl-track">
-
-          <div class="ctl-phase phase-1">
-            <div class="ctl-dot-wrap">
-              <div class="ctl-dot dot-green"><span>1</span></div>
-            </div>
-            <div class="ctl-card card-green">
-              <div class="ctl-date">Now → April 1</div>
-              <ul class="ctl-bullets">
-                <li>Select 5 <em>Ready to Move</em> accounts to go through migration first</li>
-                <li>Product building templated migration tool to ensure TP satisfaction</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="ctl-arrow">→</div>
-
-          <div class="ctl-phase phase-2">
-            <div class="ctl-dot-wrap">
-              <div class="ctl-dot dot-turquoise"><span>2</span></div>
-            </div>
-            <div class="ctl-card card-turquoise">
-              <div class="ctl-date">Mid-April → May 1</div>
-              <ul class="ctl-bullets">
-                <li>Marketing to begin campaign <em>(details on page below)</em></li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
+      <ul class="simple-timeline">
+        <li><strong>Now – April 1:</strong> Select 5 Ready to Move accounts to go through migration first; Product building templated migration tool to ensure TP satisfaction</li>
+        <li><strong>Mid-April – May 1:</strong> Marketing to begin campaign <em>(details on page below)</em></li>
+      </ul>
     </div>
   </section>
 
